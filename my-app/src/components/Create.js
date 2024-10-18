@@ -3,8 +3,9 @@ import { useState } from "react";
 // Reusable read component
 const Create = () => {
 
-  const [title, setTitle, year, setYear, poster, setPosterURL] = useState("");
-
+  const [title, setTitle,] = useState("");
+  const [year, setYear] = useState("");
+  const [poster, setPoster] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title);
@@ -17,7 +18,7 @@ const Create = () => {
       <h1>Hello from the Create component</h1>
       <form onSubmit={handleSubmit}>
         
-        <div>
+        <div className="form-group">
     	    <label>Add Movie Title: </label>
           <input type="text"
           className="form-control"
@@ -40,7 +41,7 @@ const Create = () => {
           <input type="text"
           className="form-control"
           value={poster}
-          onChange={(e) => {setPosterURL(e.target.value) }}
+          onChange={(e) => {setPoster(e.target.value) }}
           />
         </div>
 
