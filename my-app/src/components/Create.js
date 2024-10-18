@@ -32,6 +32,7 @@ const Create = () => {
       <h1>Hello from the Create component</h1>
       <form onSubmit={handleSubmit}>
         
+        {/* Input box to change movie value */}
         <div className="form-group">
     	    <label>Add Movie Title: </label>
           <input type="text"
@@ -41,6 +42,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Input box to change year value */}
         <div>
     	    <label>Add Movie Year: </label>
           <input type="text"
@@ -50,6 +52,7 @@ const Create = () => {
           />
         </div>
 
+        {/* Input box to change poster value */}
         <div>
     	    <label>Add Poster URL: </label>
           <input type="text"
@@ -59,6 +62,7 @@ const Create = () => {
           />
         </div>
 
+      {/* Submit button - runs handleSubmit() */}
         <div>
           <input type="submit" value="Add Movie"/>
         </div>
