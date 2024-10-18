@@ -3,9 +3,23 @@ import { useState } from "react";
 // Reusable read component
 const Create = () => {
 
+  // useState() is a hook in React that allows you to add 
+  // state variables to functional components.
+  // This allows for the management of state outside of classes.
+
+  // How to use useState():
+
+  // const [state, setState] = useState(initialValue);
+  // state : The value that can be used in the component
+  // setState() : Updates the value
+  // initialValue : sets value on init
+
+  // Declare useState() for each value
   const [title, setTitle,] = useState("");
   const [year, setYear] = useState("");
   const [poster, setPoster] = useState("");
+
+  // Log input values to console
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title);
