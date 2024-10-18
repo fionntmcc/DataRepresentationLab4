@@ -8,25 +8,27 @@ import { useActionData } from "react-router-dom";
 const Read = () => {
 
     // constant to store movies as JSON
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([]); // initialise movies to null array
 
+    // useEffect() method to get movies from API
     useEffect(
         () => {
-            axios.get("https://jsonblob.com/api/jsonblob/1287718524221775872")
+            axios.get("https://jsonblob.com/api/jsonblob/1287718524221775872") // gets from given API
             .then((response) => {
-                console.log(response.data);
-                setMovies(response.data.movies)
+                console.log(response.data); // logs api response
+                setMovies(response.data.movies) // sets Movies using useState()
             })
             .catch(
-                (error) => {
-                    console.log(error);
+                (error) => { // handle errors
+                    console.log(error); 
                 }
             )
-        }, []
+        }, [] // only runs on init
     );
     
     // return message and movie list
     return <div>
+            {/* display movies */}
             <h1>Hello from the Read component</h1>
             <Movies myMovies={movies} />
         </div>;
