@@ -10,7 +10,20 @@ const Read = () => {
     // constant to store movies as JSON
     const [movies, setMovies] = useState([]);
 
-
+    useEffect(
+        () => {
+            axios.get("https://jsonblob.com/api/jsonblob/1287718524221775872")
+            .then((response) => {
+                console.log(response.data);
+                setMovies(response.data.movies)
+            })
+            .catch(
+                (error) => {
+                    console.log(error);
+                }
+            )
+        }, []
+    );
     
     // return message and movie list
     return <div>
